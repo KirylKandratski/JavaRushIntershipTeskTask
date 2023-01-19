@@ -5,14 +5,10 @@ import com.game.entity.Profession;
 import com.game.entity.Race;
 import com.game.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -81,7 +77,7 @@ public class PlayerController {
 
 
     @PostMapping("/rest/players")
-    public ResponseEntity<Player> createPlayer(@RequestBody @Valid Player player) {
+    public ResponseEntity<Player> createPlayer(@RequestBody Player player) {
         if (player.getName() == null || (player.getName().length() > 12) || (player.getName() == "")) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }

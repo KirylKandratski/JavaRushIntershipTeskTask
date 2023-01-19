@@ -12,34 +12,23 @@ public class Player {
     @Column(name = "id")
     private Long id;
     @Column(name = "name")
-    //@NotEmpty
-    //@Size(max = 12)
     private String name;
 
     @Column(name = "title")
-    //@NotEmpty
-    //@Size(max = 30)
     private String title;
     @Column(name = "race")
     @Enumerated(EnumType.STRING)
-    //@NotEmpty
     private Race race;
     @Column(name = "profession")
     @Enumerated(EnumType.STRING)
-    //@NotEmpty
     private Profession profession;
     @Column(name = "experience")
-    //@NotEmpty
-    //@Min(value = 0)
-    //@Max(value = 10000000)
     private Integer experience;
     @Column(name = "level")
     private Integer level;
     @Column(name = "untilNextLevel")
     private Integer untilNextLevel;
     @Column(name = "birthday")
-    //@NotEmpty(message = "Не может быть пустой")
-    //@Min(value = 0)
     private Date birthday;
     @Column(name = "banned")
     //@NotEmpty
